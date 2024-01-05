@@ -1,5 +1,8 @@
 {
   "aboutUs": "About us",
   "main": "Main",
-  "lang": "English"
+  "lang": "English",
+  "404": "Page not found",
+  "unexpectedError": "Unexpected error occured",
+  "reloadPage": "Reload Page"
 }
