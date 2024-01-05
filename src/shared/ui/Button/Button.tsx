@@ -4,7 +4,7 @@ import cls from './Button.module.scss';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
-  theme?: 'clear'
+  theme?: 'clear' | 'outline'
 }
 
 const Button: FC<ButtonProps> = (props) => {

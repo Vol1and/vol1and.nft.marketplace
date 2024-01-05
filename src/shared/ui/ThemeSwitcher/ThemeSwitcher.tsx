@@ -24,7 +24,7 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }: ThemeSwitcherProps
 
     return (
         <Button onClick={toggleTheme} className={classNames(className, {}, [cls.ThemeSwitcher])}>
-            {getThemeIcon()}
+            <DarkIcon />
         </Button>
     );
 };

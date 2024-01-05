@@ -1,4 +1,5 @@
 .Button {
+
 }
 
 .clear {
@@ -7,6 +8,12 @@
     border: none;
     outline: 0;
     background: none;
+}
+
+.outline {
+    padding: 8px;
+    border: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .primary {
