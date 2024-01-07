@@ -2,6 +2,18 @@
     display: initial;
 }
 
+.bg {
+    background: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.bg-inverted {
+    background: var(--inverted-bg-color);
+    color: var(--inverted-primary-color);
+    border: none
+
+}
+
 .clear {
     padding: 0;
     margin: 0;
@@ -22,4 +34,20 @@
 
 .secondary {
     color: var(--inverted-primary-color);
+}
+
+.square {
+    padding: 0;
+    &.md {
+        width: var(--font-line-m);
+        height: var(--font-line-m);
+    }
+    &.sm {
+        width: var(--font-line);
+        height: var(--font-line);
+    }
+    &.lg {
+        width: var(--font-line-l);
+        height: var(--font-line-l);
+    }
 }

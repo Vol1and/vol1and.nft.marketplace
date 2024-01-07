@@ -43,3 +43,26 @@ export const Outline: Story = {
         theme: 'outline',
     },
 };
+
+export const Square: Story = {
+    args: {
+        children: 'Button',
+        square: true,
+    },
+};
+
+export const OutlineLG: Story = {
+    args: {
+        children: 'Button',
+        theme: 'outline',
+        size: 'lg',
+    },
+};
+
+export const OutlineSM: Story = {
+    args: {
+        children: 'Button',
+        theme: 'outline',
+        size: 'sm',
+    },
+};

@@ -3,13 +3,18 @@ import { AboutPage } from 'pages/AboutPage';
 import React from 'react';
 import { NotFoundPage } from 'pages/NotFoundPage/ui/NotFoundPage';
 
+export enum RoutePath {
+    MAIN = '/',
+    ABOUT = '/about'
+}
+
 export const routeConfig = [
     {
-        path: '/',
+        path: RoutePath.MAIN,
         element: <MainPage />,
     },
     {
-        path: '/about',
+        path: RoutePath.ABOUT,
         element: <AboutPage />,
     },
     {

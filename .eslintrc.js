@@ -60,7 +60,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'no-restricted-globals': 'off',
         'i18next/no-literal-string':
-            ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'theme'] }],
+            ['warn', { markupOnly: true }],
         'max-len': ['error', { code: 100, ignoreComments: true }],
     },
 };

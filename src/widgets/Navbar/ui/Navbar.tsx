@@ -13,11 +13,6 @@ const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={classNames(className, {}, [cls.Navbar])}>
             <div />
-            12321
-            <div className={cls.links}>
-                <AppLink theme="secondary" to="/">{t('main')}</AppLink>
-                <AppLink theme="secondary" to="/about">{t('aboutUs')}</AppLink>
-            </div>
         </div>
     );
 };

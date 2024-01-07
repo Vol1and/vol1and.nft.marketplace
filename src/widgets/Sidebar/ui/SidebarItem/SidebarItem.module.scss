@@ -1,0 +1,23 @@
+.SidebarItem {
+  display: flex;
+  gap: 12px;
+  font-size: var(--font-size-l);
+
+  &.collapsed {
+    margin-left: 8px;
+  }
+
+  svg {
+    fill: var(--inverted-primary-color)
+  }
+
+  span {
+    transition: 0.3s;
+  }
+
+  &.collapsed {
+    span {
+      display: none;
+    }
+  }
+}
