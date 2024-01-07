@@ -4,18 +4,22 @@
     background: var(--inverted-bg-color);
     position: relative;
     transition: 0.2s;
-
     padding: 12px;
+
+    .items {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 
     &.collapsed {
         width: var(--sidebar-width-collapsed);
+
         .items {
-            gap: 24px
+            gap: 24px;
         }
     }
 }
-
-
 
 .switchers {
     position: absolute;
@@ -31,10 +35,4 @@
     position: absolute;
     right: -24px;
     bottom: 40px;
-}
-
-.items {
-    display: flex;
-    flex-direction: column;
-    gap: 16px
 }
