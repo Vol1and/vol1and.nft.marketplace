@@ -7,9 +7,10 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
-    className?: string,
+    className?: string
     isOpen: boolean
     onClose: () => void
+    lazy?: boolean
 
 }
 const ANUMATION_DELAY = 300;
@@ -17,9 +18,10 @@ const ANUMATION_DELAY = 300;
 const Modal = (props: PropsWithChildren<ModalProps>) => {
     const { theme } = useTheme();
     const {
-        children, className, isOpen, onClose,
+        children, className, isOpen, onClose, lazy = false,
     } = props;
 
+    const [isMounted, setIsMounted] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
 
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -46,6 +48,12 @@ const Modal = (props: PropsWithChildren<ModalProps>) => {
 
     useEffect(() => {
         if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
@@ -53,6 +61,10 @@ const Modal = (props: PropsWithChildren<ModalProps>) => {
             clearTimeout(timerRef.current);
         };
     }, [isOpen, onKeyDown]);
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

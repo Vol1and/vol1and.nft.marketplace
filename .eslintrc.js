@@ -43,6 +43,7 @@ module.exports = {
         },
     ],
     rules: {
+        'no-param-reassign': 'off',
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
@@ -62,7 +63,7 @@ module.exports = {
         'no-restricted-globals': 'off',
         'i18next/no-literal-string':
             ['warn', { markupOnly: true }],
-        'max-len': ['error', { code: 100, ignoreComments: true }],
+        'max-len': ['error', { code: 120, ignoreComments: true }],
         'jsx-a11y/click-events-have-key-events': ['off'],
         'jsx-a11y/no-static-element-interactions': 'off',
         'react-hooks/rules-of-hooks': 'error',

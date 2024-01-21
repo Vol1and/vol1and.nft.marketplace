@@ -5,5 +5,10 @@
   "404": "Page not found",
   "unexpectedError": "Unexpected error occured",
   "reloadPage": "Reload Page",
-  "Login": "Login"
+  "logIn": "Log in",
+  "login": "Login",
+  "password": "Password",
+  "LoginForm": "LoginForm",
+  "Incorrect login": "Incorrect login/password",
+  "logOut": "logOut"
 }

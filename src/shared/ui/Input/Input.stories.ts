@@ -14,8 +14,8 @@ const meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ['autodocs'],
     args: {
-        placeholder: 'Input'
-    }
+        placeholder: 'Input',
+    },
     // More on argTypes: https://storybook.js.org/docs/api/argtypes
 } satisfies Meta<typeof Input>;
 
@@ -29,7 +29,6 @@ export const Primary: Story = {
 
 export const Autocomplete: Story = {
     args: {
-        autofocus: true
-    }
+        autofocus: true,
+    },
 };
-

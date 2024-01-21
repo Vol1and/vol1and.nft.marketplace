@@ -2,7 +2,6 @@ import React, {
     InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import cls from './Input.module.scss';
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
@@ -41,7 +40,7 @@ const Input = memo((props: InputProps) => {
 
     const onFocus = () => {
         setIsFocused(true);
-        console.log(isFocused)
+        console.log(isFocused);
     };
 
     const onBlur = () => {

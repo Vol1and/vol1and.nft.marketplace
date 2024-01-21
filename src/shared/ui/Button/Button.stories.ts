@@ -66,3 +66,11 @@ export const OutlineSM: Story = {
         size: 'sm',
     },
 };
+
+export const Disabled: Story = {
+    args: {
+        children: 'Button',
+        disabled: true,
+        theme: 'outline',
+    },
+};
