@@ -17,7 +17,7 @@ export interface LoginFormProps {
     className?: string
 }
 
-const reducers = { login: loginReducer }
+const reducers = { login: loginReducer };
 
 const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();

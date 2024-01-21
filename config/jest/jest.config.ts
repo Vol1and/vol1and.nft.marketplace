@@ -31,6 +31,9 @@ export default {
     coveragePathIgnorePatterns: [
         '\\\\node_modules\\\\',
     ],
+    globals: {
+        __IS__DEV__: true,
+    },
 
     // Indicates which provider should be used to instrument code for coverage
     // coverageProvider: "babel",
@@ -88,6 +91,7 @@ export default {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
             path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         '\\.(css|scss)$': 'identity-obj-proxy',
+        '^axios$': 'axios/dist/node/axios.cjs',
     },
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 

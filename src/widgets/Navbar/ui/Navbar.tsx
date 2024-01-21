@@ -39,10 +39,12 @@ const Navbar = ({ className }: NavbarProps) => {
         <div className={classNames(className, {}, [cls.Navbar])}>
             <div />
             <Button onClick={onToggleModal} theme="clear">{t('logIn')}</Button>
-            {isAuthModal && <LoginModal
-                isOpen={isAuthModal}
-                onClose={onToggleModal}
-            />}
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onToggleModal}
+                />
+            )}
         </div>
     );
 };

@@ -17,7 +17,7 @@ export const createReduxStore = (initialState?: StateSchema) => {
         preloadedState: initialState,
     });
 
-    //@ts-ignore
+    // @ts-ignore
     store.reducerManager = reducerManager;
 
     return store;

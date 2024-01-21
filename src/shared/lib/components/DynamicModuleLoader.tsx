@@ -40,8 +40,9 @@ const DynamicModuleLoader = (props: PropsWithChildren<DynamicModuleLoaderProps>)
                 });
             }
         };
-    }, []);
+    }, [dispatch, reducers, removeAfterUnmount, store.reducerManager]);
 
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{children}</>;
 };
 export { DynamicModuleLoader };
