@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Владимир",
+    "lastname": "Полторацкий",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://desu.shikimori.one/uploads/poster/characters/82525/main-286b0cb25e4eb06aaac9c468a020c929.webp"
+  }
 }

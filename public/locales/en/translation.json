@@ -8,7 +8,8 @@
   "logIn": "Log in",
   "login": "Login",
   "password": "Password",
-  "LoginForm": "LoginForm",
+  "LoginForm": "Login Form",
   "Incorrect login": "Incorrect login/password",
-  "logOut": "logOut"
+  "logOut": "Log out",
+  "profile": "Profile"
 }

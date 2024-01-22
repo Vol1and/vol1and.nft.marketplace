@@ -1,31 +1,32 @@
-import React, { useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
-import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
-import { Button } from 'shared/ui/Button/Button';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
+import React, {useState} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {ThemeSwitcher} from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
+import {LangSwitcher} from 'shared/ui/LangSwitcher/LangSwitcher';
+import {Button} from 'shared/ui/Button/Button';
+import {RoutePath} from 'shared/config/routeConfig/routeConfig';
+import {SidebarItem} from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
+import ProfileIcon from 'shared/assets/icons/profile-20-20.svg';
+import i18n from 'shared/config/i18n/i18n';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string
 }
 
-const Sidebar = ({ className }: SidebarProps) => {
+const items = [
+    { link: RoutePath.MAIN, icon: <MainIcon />, label: i18n.t('main') },
+    { link: RoutePath.ABOUT, icon: <AboutIcon />, label: i18n.t('aboutUs') },
+    { link: RoutePath.PROFILE, icon: <ProfileIcon />, label: i18n.t('profile') },
+];
+
+const Sidebar = (({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState<boolean>();
 
-    const { t } = useTranslation();
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
-
-    const items = [
-        { link: RoutePath.MAIN, icon: <MainIcon />, label: t('main') },
-        { link: RoutePath.ABOUT, icon: <AboutIcon />, label: t('aboutUs') },
-    ];
 
     return (
         <div
@@ -35,7 +36,7 @@ const Sidebar = ({ className }: SidebarProps) => {
             <div className={cls.items}>
                 {items.map((item) => (
                     <SidebarItem
-                        key={item.label}
+                        key={item.link}
                         collapsed={collapsed}
                         link={item.link}
                         icon={item.icon}
@@ -60,5 +61,5 @@ const Sidebar = ({ className }: SidebarProps) => {
             </Button>
         </div>
     );
-};
+});
 export { Sidebar };

@@ -10,5 +10,6 @@
   "logOut": "Выйти",
   "password": "Пароль",
   "LoginForm": "Форма авторизации",
-  "Incorrect login": "Некорректный логин/пароль"
+  "Incorrect login": "Некорректный логин/пароль",
+  "profile": "Профиль"
 }

@@ -1,11 +1,13 @@
+import React from 'react';
 import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
-import React from 'react';
-import { NotFoundPage } from 'pages/NotFoundPage/ui/NotFoundPage';
+import { NotFoundPage } from 'pages/NotFoundPage';
+import { ProfilePage } from 'pages/ProfilePage';
 
 export enum RoutePath {
     MAIN = '/',
-    ABOUT = '/about'
+    ABOUT = '/about',
+    PROFILE = '/profile'
 }
 
 export const routeConfig = [
@@ -16,6 +18,10 @@ export const routeConfig = [
     {
         path: RoutePath.ABOUT,
         element: <AboutPage />,
+    },
+    {
+        path: RoutePath.PROFILE,
+        element: <ProfilePage />,
     },
     {
         path: '*',

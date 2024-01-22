@@ -1,27 +1,29 @@
-import React, { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
-import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
-import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
-import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
-import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import React, {memo, useCallback} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {useTranslation} from 'react-i18next';
+import {Button} from 'shared/ui/Button/Button';
+import {Input} from 'shared/ui/Input/Input';
+import {useSelector} from 'react-redux';
+import {Text, TextTheme} from 'shared/ui/Text/Text';
+import {getLoginUsername} from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
+import {getLoginPassword} from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
+import {getLoginError} from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
+import {getLoginIsLoading} from 'features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading';
+import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader';
+import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
+import {loginActions, loginReducer} from '../../model/slice/loginSlice';
+import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 export interface LoginFormProps {
     className?: string
+    onSuccess: () => void
 }
 
 const reducers = { login: loginReducer };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
@@ -36,8 +38,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginClick = useCallback(() => {
-        dispatch(loginByUsername({ password, username }));
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ password, username }));
+
+        if(result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
     }, [dispatch, username, password]);
 
     return (

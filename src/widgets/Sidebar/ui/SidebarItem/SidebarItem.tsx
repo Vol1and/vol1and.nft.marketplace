@@ -1,17 +1,17 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React, {memo, PropsWithChildren, ReactNode} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import cls from './SidebarItem.module.scss';
 
-interface SidebarItemProps {
+export interface SidebarItemProps {
     className?: string
     link: RoutePath
     icon: ReactNode
-    collapsed: boolean
+    collapsed?: boolean
 }
 
-const SidebarItem = (props: PropsWithChildren<SidebarItemProps>) => {
+const SidebarItem = memo((props: PropsWithChildren<SidebarItemProps>) => {
     const {
         className, icon, link, children, collapsed,
     } = props;
@@ -25,5 +25,5 @@ const SidebarItem = (props: PropsWithChildren<SidebarItemProps>) => {
             <span>{children}</span>
         </AppLink>
     );
-};
+});
 export { SidebarItem };
