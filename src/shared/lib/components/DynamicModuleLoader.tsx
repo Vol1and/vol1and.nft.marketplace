@@ -5,7 +5,7 @@ import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
 import { Reducer } from '@reduxjs/toolkit';
 
 type ReducerListEntry = [
-    StateSchemaKey,
+    string,
     Reducer
 ]
 
@@ -28,7 +28,7 @@ const DynamicModuleLoader = (props: PropsWithChildren<DynamicModuleLoaderProps>)
 
     useEffect(() => {
         Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry) => {
-            store.reducerManager.add(name, reducer);
+            store.reducerManager.add(name as StateSchemaKey, reducer);
             dispatch({ type: `@INIT ${name} reducer` });
         });
 

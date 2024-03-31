@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {ThemeSwitcher} from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
-import {LangSwitcher} from 'shared/ui/LangSwitcher/LangSwitcher';
-import {Button} from 'shared/ui/Button/Button';
-import {RoutePath} from 'shared/config/routeConfig/routeConfig';
-import {SidebarItem} from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
+import React, { useState } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
+import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
+import { Button } from 'shared/ui/Button/Button';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import ProfileIcon from 'shared/assets/icons/profile-20-20.svg';

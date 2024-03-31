@@ -18,3 +18,7 @@ declare module '*.jpg'
 declare module '*.png'
 
 declare const __IS__DEV__: boolean;
+
+type DeepPartial<T> = T extends object ? {
+    [P in keyof T]?: DeepPartial<T[P]>;
+} : T;

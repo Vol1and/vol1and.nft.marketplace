@@ -1,4 +1,4 @@
-import React, {memo, PropsWithChildren, ReactNode} from 'react';
+import React, { memo, PropsWithChildren, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
