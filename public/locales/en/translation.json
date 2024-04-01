@@ -11,5 +11,6 @@
   "LoginForm": "Login Form",
   "Incorrect login": "Incorrect login/password",
   "logOut": "Log out",
-  "profile": "Profile"
+  "profile": "Profile",
+  "articles": "articles"
 }

@@ -8,6 +8,7 @@ import {SidebarItem} from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import ProfileIcon from 'shared/assets/icons/profile-20-20.svg';
+import ArticleIcon from 'shared/assets/icons/article-20-20.svg';
 import i18n from 'shared/config/i18n/i18n';
 import cls from './Sidebar.module.scss';
 
@@ -19,6 +20,7 @@ const items = [
     { link: RoutePath.MAIN, icon: <MainIcon />, label: i18n.t('main') },
     { link: RoutePath.ABOUT, icon: <AboutIcon />, label: i18n.t('aboutUs') },
     { link: RoutePath.PROFILE, icon: <ProfileIcon />, label: i18n.t('profile') },
+    { link: RoutePath.ARTICLES, icon: <ArticleIcon />, label: i18n.t('articles') },
 ];
 
 const Sidebar = (({ className }: SidebarProps) => {
