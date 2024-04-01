@@ -4,16 +4,17 @@ import React, {
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'> {
     className?: string
-    value?: string
+    value?: string | number
     onChange?: (value: string) => void
-    autofocus?: boolean
+    autofocus?: boolean,
+    readonly?: boolean
 }
 
 const Input = memo((props: InputProps) => {
     const {
-        className, value, autofocus = false,
+        className, value, autofocus = false, readonly = false,
         onChange, type = 'text', placeholder, ...otherProps
     } = props;
 
@@ -57,15 +58,16 @@ const Input = memo((props: InputProps) => {
             <div className={cls.caretWrapper}>
                 <input
                     ref={ref}
-                    className={cls.input}
+                    className={classNames(cls.input, { [cls.readonly]: readonly })}
                     type={type}
                     value={value}
+                    readOnly={readonly}
                     onChange={onChangeHandler}
                     onFocus={onFocus}
                     onBlur={onBlur}
                     onSelect={onSelect}
                 />
-                {isFocused
+                {isFocused && !readonly
                     && (<span className={cls.caret} style={{ left: `${caretPosition * 8}px` }} />)}
             </div>
         </div>

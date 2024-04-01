@@ -33,6 +33,7 @@ export interface ThunkConfig<T> {
     extra: {
         api: AxiosInstance
         navigate?: NavigateFunction
-    }
+    },
+    state: StateSchema
     rejectValue: T
 }

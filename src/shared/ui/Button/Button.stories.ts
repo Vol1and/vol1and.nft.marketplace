@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from './Button';
+import {Button, ButtonTheme} from './Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -33,14 +33,14 @@ export const Primary: Story = {
 export const Clear: Story = {
     args: {
         children: 'Button',
-        theme: 'clear',
+        theme: ButtonTheme.CLEAR,
     },
 };
 
 export const Outline: Story = {
     args: {
         children: 'Button',
-        theme: 'outline',
+        theme: ButtonTheme.OUTLINE,
     },
 };
 
@@ -54,7 +54,7 @@ export const Square: Story = {
 export const OutlineLG: Story = {
     args: {
         children: 'Button',
-        theme: 'outline',
+        theme: ButtonTheme.OUTLINE,
         size: 'lg',
     },
 };
@@ -62,7 +62,7 @@ export const OutlineLG: Story = {
 export const OutlineSM: Story = {
     args: {
         children: 'Button',
-        theme: 'outline',
+        theme: ButtonTheme.OUTLINE,
         size: 'sm',
     },
 };
@@ -71,6 +71,6 @@ export const Disabled: Story = {
     args: {
         children: 'Button',
         disabled: true,
-        theme: 'outline',
+        theme: ButtonTheme.OUTLINE,
     },
 };

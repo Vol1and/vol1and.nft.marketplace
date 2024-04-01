@@ -26,11 +26,11 @@
     }
   ],
   "profile": {
-    "firstname": "Владимир",
+    "firstname": "Сергей",
     "lastname": "Полторацкий",
     "age": 22,
-    "currency": "RUB",
-    "country": "Russia",
+    "currency": "USD",
+    "country": "Canada",
     "city": "Moscow",
     "username": "admin",
     "avatar": "https://desu.shikimori.one/uploads/poster/characters/82525/main-286b0cb25e4eb06aaac9c468a020c929.webp"

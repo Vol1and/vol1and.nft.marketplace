@@ -1,18 +1,18 @@
-import React, { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
-import { useSelector } from 'react-redux';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
-import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
-import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
-import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import React, {memo, useCallback} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {useTranslation} from 'react-i18next';
+import {Button, ButtonTheme} from 'shared/ui/Button/Button';
+import {Input} from 'shared/ui/Input/Input';
+import {useSelector} from 'react-redux';
+import {Text, TextTheme} from 'shared/ui/Text/Text';
+import {getLoginUsername} from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
+import {getLoginPassword} from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
+import {getLoginError} from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
+import {getLoginIsLoading} from 'features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading';
+import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader';
+import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
+import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 
 export interface LoginFormProps {
     className?: string
@@ -67,7 +67,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     placeholder={t('password')}
                     type="text"
                 />
-                <Button onClick={onLoginClick} theme="outline" disabled={isLoading}>
+                <Button onClick={onLoginClick} theme={ButtonTheme.CLEAR} disabled={isLoading}>
                     {t('logIn')}
                 </Button>
             </div>

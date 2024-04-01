@@ -2,8 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import i18n from 'shared/config/i18n/i18n';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { type Profile } from '../../types/profile';
-import { profileActions } from '../../slice/profileSlice';
 
+// eslint-disable-next-line max-len
 export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>('profile/fetchProfileData', async (_, thunkAPI) => {
     const { extra, rejectWithValue } = thunkAPI;
     try {

@@ -3,7 +3,7 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import { getProfileIsLoading } from './getProfileIsLoading';
 
 describe('getProfileIsLoading.test', () => {
-    it('should return error', () => {
+    it('should return isLoading', () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
                 isLoading: true,
