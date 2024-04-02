@@ -43,14 +43,6 @@ describe('profileSlice.test', () => {
         )).toEqual({ isLoading: true, error: undefined });
     });
 
-    test('test update profile service rejected', () => {
-        const state: DeepPartial<ProfileSchema> = { isLoading: false, error: 'ebao' };
-        expect(profileReducer(
-            state as ProfileSchema,
-            updateProfileData.pending,
-        )).toEqual({ isLoading: true, error: undefined });
-    });
-
     test('test update profile service fulfilled', () => {
         const state: DeepPartial<ProfileSchema> = { isLoading: true, data: undefined, form: undefined };
         expect(profileReducer(

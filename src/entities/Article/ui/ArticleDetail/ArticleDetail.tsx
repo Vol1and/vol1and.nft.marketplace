@@ -1,13 +1,21 @@
-import React, {memo, useEffect} from 'react';
-import {useTranslation} from 'react-i18next';
-import {useDispatch, useSelector} from 'react-redux';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader';
-import {getArticleDetailData, getArticleDetailIsLoading} from 'entities/Article';
-import {getArticleDetailError} from 'entities/Article/model/selectors/articleDetailSelectors';
-import {Loader} from 'shared/ui/Loader/Loader';
-import {articleDetailReducer} from '../../model/slice/articleDetailSlice';
-import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById';
+import React, { memo, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
+import { getArticleDetailData, getArticleDetailIsLoading } from 'entities/Article';
+import { getArticleDetailError } from 'entities/Article/model/selectors/articleDetailSelectors';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Text } from 'shared/ui/Text/Text';
+import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
+import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
+import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { articleDetailReducer } from '../../model/slice/articleDetailSlice';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import cls from './ArticleDetail.module.scss';
 
 interface ArticleDetailProps {
@@ -19,29 +27,62 @@ const reducers: ReducerList = {
     articleDetail: articleDetailReducer,
 };
 
-const ArticleDetail = memo(({className, id}: ArticleDetailProps) => {
+const ArticleDetail = memo(({ className, id }: ArticleDetailProps) => {
     const dispatch = useDispatch();
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const article = useSelector(getArticleDetailData);
     const isLoading = useSelector(getArticleDetailIsLoading);
     const error = useSelector(getArticleDetailError);
+
+    const renderBlock = useCallback((block: ArticleBlock) => {
+        switch (block.type) {
+        case ArticleBlockType.CODE:
+            return <ArticleCodeBlockComponent block={block} />;
+        case ArticleBlockType.IMAGE:
+            return <ArticleImageBlockComponent block={block} />;
+        case ArticleBlockType.TEXT:
+            return <ArticleTextBlockComponent block={block} />;
+        default:
+            return null;
+        }
+    }, []);
 
     useEffect(() => {
         dispatch(fetchArticleById(id));
     }, [dispatch, id]);
 
-    let content
+    let content;
 
     if (isLoading) {
-        content = <Loader/>
-    }
-
-    if (error) {
-        content = <div>{error}</div>
+        content = (
+            <>
+                <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+                <Skeleton className={cls.title} width={300} height={32} />
+                <Skeleton className={cls.skeleton} width={600} height={24} />
+                <Skeleton className={cls.skeleton} width="100%" height={200} />
+                <Skeleton className={cls.skeleton} width="100%" height={200} />
+            </>
+        );
+    } else if (error) {
+        content = <div>{error}</div>;
     } else {
         content = (
-            <div>Ебись ты</div>
-        )
+            <>
+                <div className={cls.avatarWrapper}>
+                    <Avatar size={200} src={article?.img} className={cls.avatar} />
+                </div>
+                <Text title={article?.title} text={article?.subtitle} />
+                <div className={cls.articleInfo}>
+                    <EyeIcon />
+                    <Text text={`${article?.views}`} />
+                </div>
+                <div className={cls.articleInfo}>
+                    <CalendarIcon />
+                    <Text text={`${article?.createdAt}`} />
+                </div>
+                {article?.blocks.map(renderBlock)}
+            </>
+        );
     }
 
     return (
@@ -52,4 +93,4 @@ const ArticleDetail = memo(({className, id}: ArticleDetailProps) => {
         </DynamicModuleLoader>
     );
 });
-export {ArticleDetail};
+export { ArticleDetail };
