@@ -10,6 +10,7 @@ export enum RoutePath {
     MAIN = '/',
     ABOUT = '/about',
     PROFILE = '/profile',
+    PROFILE_DETAIL = '/profile/:id',
     ARTICLES = '/articles',
     ARTICLE_DETAIL = '/articles/:id',
     NOT_FOUND = '*'
@@ -44,7 +45,7 @@ export const routeConfig: RouteConfigElement[] = [
         element: <AboutPage />,
     },
     {
-        path: RoutePath.PROFILE,
+        path: RoutePath.PROFILE_DETAIL,
         element: <ProfilePage />,
         requireAuth: true,
     },

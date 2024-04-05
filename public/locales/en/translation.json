@@ -12,5 +12,7 @@
   "Incorrect login": "Incorrect login/password",
   "logOut": "Log out",
   "profile": "Profile",
-  "articles": "articles"
+  "articles": "articles",
+  "Введите текст комментария": "Введите текст комментария",
+  "Отправить": "Отправить"
 }

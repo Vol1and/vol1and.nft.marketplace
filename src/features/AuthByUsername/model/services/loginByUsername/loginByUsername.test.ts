@@ -2,7 +2,7 @@ import { loginByUsername } from 'features/AuthByUsername/model/services/loginByU
 import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk';
 
-const userMock = { username: '123', id: '1' };
+const userMock = { username: '123', id: '1', avatar: 'Eblan' };
 describe('loginByUsername.test', () => {
     const thunk = new TestAsyncThunk(loginByUsername);
     test('should success login', async () => {

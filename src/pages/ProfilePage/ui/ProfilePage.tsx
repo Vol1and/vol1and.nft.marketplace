@@ -12,11 +12,12 @@ import {
     profileReducer,
 } from 'entities/Profile';
 import { useSelector } from 'react-redux';
-import cls from './ProfilePage.module.scss';
-import {ProfilePageHeader} from "pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader";
-import {Currency} from "entities/Currency";
+import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
+import { Currency } from 'entities/Currency';
 
-import {Country} from "entities/Country/model/const/country";
+import { Country } from 'entities/Country/model/const/country';
+import { useParams } from 'react-router-dom';
+import cls from './ProfilePage.module.scss';
 
 const reducers: ReducerList = {
     profile: profileReducer,
@@ -29,13 +30,16 @@ interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
+    const { id } = useParams<{id: string}>();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if(id) {
+            dispatch(fetchProfileData(id));
+        }
     }, [dispatch]);
 
     const onChangeFirstname = useCallback((value: string) => {
@@ -58,7 +62,6 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ username: value || '' }));
     }, [dispatch]);
 
-
     const onChangeAvatar = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ avatar: value || '' }));
     }, [dispatch]);
@@ -71,6 +74,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ country: value || '' }));
     }, [dispatch]);
 
+    if (!id) {
+        return (
+            <div className={classNames(className, {}, [cls.ArticleDetailPage])}>
+                {t('Статья не найдена')}
+            </div>
+        );
+    }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

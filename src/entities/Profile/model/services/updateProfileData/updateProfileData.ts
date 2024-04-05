@@ -4,12 +4,12 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { getProfileForm } from 'entities/Profile';
 import { type Profile } from '../../types/profile';
 
-export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>('profile/updateProfileData', async (_, thunkAPI) => {
+export const updateProfileData = createAsyncThunk<Profile, string, ThunkConfig<string>>('profile/updateProfileData', async (profileId, thunkAPI) => {
     const { extra, rejectWithValue, getState } = thunkAPI;
     try {
         const formData = getProfileForm(getState());
 
-        const response = await extra.api.put<Profile>('/profile', formData);
+        const response = await extra.api.put<Profile>(`/profile/${profileId}`, formData);
 
         if (!response.data) {
             throw new Error();

@@ -14,7 +14,7 @@ const mockData: Article = {
 };
 
 describe('articleDetailSlice.test', () => {
-    test('test update profile service pending', () => {
+    test('test update profile services pending', () => {
         const state: DeepPartial<ArticleDetailSchema> = { isLoading: false, error: 'ebao' };
         expect(articleDetailReducer(
             state as ArticleDetailSchema,
@@ -22,7 +22,7 @@ describe('articleDetailSlice.test', () => {
         )).toEqual({ isLoading: true, error: undefined });
     });
 
-    test('test update profile service rejected', () => {
+    test('test update profile services rejected', () => {
         const state: DeepPartial<ArticleDetailSchema> = { isLoading: false, error: 'ebao' };
         expect(articleDetailReducer(
             state as ArticleDetailSchema,
@@ -30,7 +30,7 @@ describe('articleDetailSlice.test', () => {
         )).toEqual({ isLoading: true, error: undefined });
     });
 
-    test('test update profile service fulfilled', () => {
+    test('test update profile services fulfilled', () => {
         const state: DeepPartial<ArticleDetailSchema> = { isLoading: true, data: undefined };
         expect(articleDetailReducer(
             state as ArticleDetailSchema,

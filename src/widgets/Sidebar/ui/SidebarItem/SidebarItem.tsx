@@ -2,12 +2,13 @@ import React, { memo, PropsWithChildren, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { IconItem } from '@storybook/blocks';
 import cls from './SidebarItem.module.scss';
 
 export interface SidebarItemProps {
     className?: string
-    link: RoutePath
-    icon: ReactNode
+    link: string
+    icon: React.VFC<React.SVGProps<SVGSVGElement>>
     collapsed?: boolean
 }
 
@@ -21,7 +22,7 @@ const SidebarItem = memo((props: PropsWithChildren<SidebarItemProps>) => {
             theme="secondary"
             to={link}
         >
-            {icon}
+            <props.icon />
             <span>{children}</span>
         </AppLink>
     );

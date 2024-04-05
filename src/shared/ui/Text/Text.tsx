@@ -13,6 +13,10 @@ export enum TextAlign {
     CENTER = 'center'
 }
 
+export enum TextSize {
+
+}
+
 interface TextProps {
     className?: string
     title?: string
