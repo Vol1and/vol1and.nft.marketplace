@@ -36,7 +36,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
         );
     }
     return (
-        <div className={classNames(className, {}, [cls.Navbar])}>
+        <header className={classNames(className, {}, [cls.Navbar])}>
             <div />
             <Button onClick={onToggleModal} theme={ButtonTheme.CLEAR}>{t('logIn')}</Button>
             {isAuthModal && (
@@ -45,7 +45,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
                     onClose={onToggleModal}
                 />
             )}
-        </div>
+        </header>
     );
 });
 export { Navbar };

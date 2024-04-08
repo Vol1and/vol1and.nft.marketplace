@@ -1,21 +1,26 @@
-.SidebarItem {
+
+
+
+
+.item {
+    margin-top: 10px;
     display: flex;
-    gap: 12px;
-    font-size: var(--font-size-l);
+    align-items: center;
+}
 
-    svg {
-        fill: var(--inverted-primary-color);
-    }
+.link {
+    margin-left: 10px;
+    opacity: 1;
+}
 
-    span {
-        transition: 0.3s;
-    }
+.icon {
+    fill: var(--inverted-primary-color);
+}
 
-    &.collapsed {
-        margin-left: 8px;
-
-        span {
-            display: none;
-        }
+.collapsed {
+    .link {
+        opacity: 0;
+        transition: 0.2s opacity;
+        width: 0;
     }
 }

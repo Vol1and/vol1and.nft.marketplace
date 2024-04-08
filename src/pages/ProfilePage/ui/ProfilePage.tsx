@@ -17,6 +17,7 @@ import { Currency } from 'entities/Currency';
 
 import { Country } from 'entities/Country/model/const/country';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './ProfilePage.module.scss';
 
 const reducers: ReducerList = {
@@ -37,10 +38,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const readonly = useSelector(getProfileReadonly);
 
     useEffect(() => {
-        if(id) {
+        if (id) {
             dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     const onChangeFirstname = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ firstname: value || '' }));
@@ -84,7 +85,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(className, {}, [cls.ProfilePage])}>
+            <Page className={classNames(className, {}, [cls.ProfilePage])}>
                 <ProfilePageHeader />
                 <ProfileCard
                     data={formData}
@@ -99,7 +100,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

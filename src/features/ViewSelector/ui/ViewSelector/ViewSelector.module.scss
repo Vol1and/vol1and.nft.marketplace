@@ -1,0 +1,13 @@
+.ViewSelector {
+  svg {
+    fill: var(--primary-color);
+    opacity: 0.6
+  }
+}
+
+.selected {
+  svg {
+    fill: var(--primary-color);
+    opacity: 1
+  }
+}

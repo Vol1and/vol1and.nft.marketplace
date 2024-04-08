@@ -11,7 +11,7 @@ import { SidebarItemType } from '../types/sidebar';
 export const getSidebarItems = createSelector(
     getUserAuthData,
     (userData): SidebarItemType[] => {
-        const items: SidebarItemType[]  = [
+        const items: SidebarItemType[] = [
             { link: RoutePath.MAIN, icon: MainIcon, label: i18n.t('main') },
             { link: RoutePath.ABOUT, icon: AboutIcon, label: i18n.t('aboutUs') },
         ];
@@ -23,6 +23,6 @@ export const getSidebarItems = createSelector(
             );
         }
 
-        return items
+        return items;
     },
 );

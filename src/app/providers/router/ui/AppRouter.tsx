@@ -11,16 +11,9 @@ const AppRouter = () => {
             element={route.requireAuth
                 ? (
                     <RequireAuth>
-                        <div className="page-wrapper">
-                            {route.element}
-                        </div>
-                    </RequireAuth>
-                )
-                : (
-                    <div className="page-wrapper">
                         {route.element}
-                    </div>
-                )}
+                    </RequireAuth>
+                ) : route.element}
         />
     ), []);
 

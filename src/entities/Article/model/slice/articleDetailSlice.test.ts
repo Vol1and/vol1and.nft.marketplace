@@ -7,12 +7,16 @@ const mockData: Article = {
     subtitle: '',
     title: '',
     createdAt: '',
+    user: {
+        id: '',
+        username: '',
+        avatar: '',
+    },
     id: '',
     img: '',
     type: [ArticleType.ECONOMICS],
     views: 0,
 };
-
 describe('articleDetailSlice.test', () => {
     test('test update profile services pending', () => {
         const state: DeepPartial<ArticleDetailSchema> = { isLoading: false, error: 'ebao' };

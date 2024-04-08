@@ -11,6 +11,11 @@ const mockData: Article = {
     subtitle: '',
     title: '',
     createdAt: '',
+    user: {
+        avatar: '',
+        username: '',
+        id: '',
+    },
     id: '',
     img: '',
     type: [ArticleType.ECONOMICS],
