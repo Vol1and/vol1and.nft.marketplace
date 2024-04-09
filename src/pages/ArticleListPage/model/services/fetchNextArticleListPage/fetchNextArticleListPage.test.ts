@@ -23,7 +23,7 @@ describe('fetchNextArticleListPage.test', () => {
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(4);
         expect(thunk.dispatch).toHaveBeenCalledWith(articleListPageActions.setPage(2));
-        expect(fetchArticleList).toHaveBeenCalledWith({ page: 2 });
+        expect(fetchArticleList).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
     });
     test('should not call if isLoading is true', async () => {
@@ -37,7 +37,7 @@ describe('fetchNextArticleListPage.test', () => {
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(thunk.dispatch).not.toHaveBeenCalledWith(articleListPageActions.setPage(2));
-        expect(fetchArticleList).not.toHaveBeenCalledWith({ page: 2 });
+        expect(fetchArticleList).not.toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
     });
     test('should not call if hasMore is false', async () => {
@@ -51,7 +51,7 @@ describe('fetchNextArticleListPage.test', () => {
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(thunk.dispatch).not.toHaveBeenCalledWith(articleListPageActions.setPage(2));
-        expect(fetchArticleList).not.toHaveBeenCalledWith({ page: 2 });
+        expect(fetchArticleList).not.toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
     });
 });

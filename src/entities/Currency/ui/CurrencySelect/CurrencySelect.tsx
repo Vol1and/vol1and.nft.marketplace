@@ -11,7 +11,7 @@ interface CurrencySelectProps {
     readonly?: boolean
 }
 
-const options: SelectOption[] = [
+const options: SelectOption<Currency>[] = [
     { content: Currency.EUR, value: Currency.EUR },
     { content: Currency.RUB, value: Currency.RUB },
     { content: Currency.USD, value: Currency.USD },
@@ -21,9 +21,9 @@ const CurrencySelect = memo((props: CurrencySelectProps) => {
     const {
         className, label, onChange, value, readonly = true,
     } = props;
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Currency);
-    }, []);
+    const onChangeHandler = useCallback((value: Currency) => {
+        onChange?.(value);
+    }, [onChange]);
     return (
         <Select
             className={classNames(className, {})}

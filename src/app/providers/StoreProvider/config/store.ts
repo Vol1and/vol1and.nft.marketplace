@@ -4,12 +4,13 @@ import {
 import { userReducer } from 'entities/User';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 import { api } from 'shared/api/api';
-import { NavigateFunction } from 'react-router-dom';
+import { pageReducer } from 'widgets/Page';
 import { StateSchema } from './StateSchema';
 
-export const createReduxStore = (initialState?: StateSchema, navigate?: NavigateFunction) => {
+export const createReduxStore = (initialState?: StateSchema) => {
     const rootReducers: ReducersMapObject<StateSchema> = {
         user: userReducer,
+        page: pageReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -23,7 +24,6 @@ export const createReduxStore = (initialState?: StateSchema, navigate?: Navigate
             thunk: {
                 extraArgument: {
                     api,
-                    navigate,
                 },
             },
         }),

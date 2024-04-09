@@ -9,6 +9,7 @@ export interface UseInfiniteScrollProps {
 const useInfiniteScroll = ({ callback, triggerRef, wrapperRef }: UseInfiniteScrollProps) => {
     useEffect(() => {
         if (callback) {
+            const triggerElement = triggerRef.current;
             const options = {
                 root: wrapperRef.current,
                 rootMargin: '0px',
@@ -23,9 +24,9 @@ const useInfiniteScroll = ({ callback, triggerRef, wrapperRef }: UseInfiniteScro
             observer.observe(triggerRef.current);
 
             return () => {
-                if (observer) {
+                if (observer && triggerElement) {
                     // eslint-disable-next-line react-hooks/exhaustive-deps
-                    observer.unobserve(triggerRef.current);
+                    observer.unobserve(triggerElement);
                 }
             };
         }

@@ -49,16 +49,17 @@ const articleListPageSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchArticleList.pending, (state) => {
+            .addCase(fetchArticleList.pending, (state, action) => {
                 state.error = undefined;
+                if (action.meta.arg.replace) {
+                    articlesAdapter.removeAll(state);
+                }
                 state.isLoading = true;
             })
             .addCase(fetchArticleList.fulfilled, (state, action) => {
                 state.isLoading = false;
                 articlesAdapter.addMany(state, action.payload);
-                if (!action.payload?.length) {
-                    state.hasMore = false;
-                }
+                state.hasMore = action.payload?.length >= state.limit;
             })
             .addCase(fetchArticleList.rejected, (state, action) => {
                 state.isLoading = false;

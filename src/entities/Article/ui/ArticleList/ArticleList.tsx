@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Article, ArticleView } from 'entities/Article';
 import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import { Text } from 'shared/ui/Text/Text';
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {
@@ -22,7 +23,11 @@ const ArticleList = (props: ArticleListProps) => {
     } = props;
     const { t } = useTranslation();
 
-    const renderArticle = (article: Article) => <ArticleListItem article={article} view={view} />;
+    const renderArticle = (article: Article) => <ArticleListItem key={article.id} article={article} view={view} />;
+
+    if (!isLoading && !articles.length) {
+        return <Text text="Статьи не найдены" />;
+    }
 
     return (
         <div className={classNames(className, {}, [cls[view]])}>

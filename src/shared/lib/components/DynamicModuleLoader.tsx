@@ -27,9 +27,12 @@ const DynamicModuleLoader = (props: PropsWithChildren<DynamicModuleLoaderProps>)
     const dispatch = useDispatch();
 
     useEffect(() => {
+        const myReducers = store.reducerManager.getReducerMap();
         Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry) => {
-            store.reducerManager.add(name as StateSchemaKey, reducer);
-            dispatch({ type: `@INIT ${name} reducer` });
+            if (!myReducers[name as StateSchemaKey]) {
+                store.reducerManager.add(name as StateSchemaKey, reducer);
+                dispatch({ type: `@INIT ${name} reducer` });
+            }
         });
 
         return () => {

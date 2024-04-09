@@ -5,3 +5,5 @@ export {
 };
 
 export { ArticleListPageSchema } from './model/types/articleListPageSchema';
+export { articleListPageReducer, articleListPageActions } from './model/slices/articleListPageSlice';
+export { getArticleListPageView } from './model/selectors/articleListPageSelectors';

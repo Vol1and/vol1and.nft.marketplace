@@ -17,7 +17,7 @@ import { Currency } from 'entities/Currency';
 
 import { Country } from 'entities/Country/model/const/country';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 import cls from './ProfilePage.module.scss';
 
 const reducers: ReducerList = {

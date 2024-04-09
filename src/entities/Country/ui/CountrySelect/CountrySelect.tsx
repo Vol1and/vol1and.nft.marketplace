@@ -11,7 +11,7 @@ interface CountrySelectProps {
     readonly?: boolean
 }
 
-const options: SelectOption[] = [
+const options: SelectOption<Country>[] = [
     { content: Country.Russia, value: Country.Russia },
     { content: Country.Canada, value: Country.Canada },
 ];
@@ -20,9 +20,9 @@ const CountrySelect = memo((props: CountrySelectProps) => {
     const {
         className, label, onChange, value, readonly = true,
     } = props;
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country);
-    }, []);
+    const onChangeHandler = useCallback((value: Country) => {
+        onChange?.(value);
+    }, [onChange]);
     return (
         <Select
             className={classNames(className, {})}
