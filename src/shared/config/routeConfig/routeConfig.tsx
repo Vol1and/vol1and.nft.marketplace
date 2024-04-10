@@ -5,6 +5,7 @@ import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { ArticleDetailPage } from 'pages/ArticleDetailPage';
 import { ArticleListPage } from 'pages/ArticleListPage';
+import {ArticleEditPage} from "pages/ArticleEditPage";
 
 export enum RoutePath {
     MAIN = '/',
@@ -12,6 +13,8 @@ export enum RoutePath {
     PROFILE = '/profile',
     PROFILE_DETAIL = '/profile/:id',
     ARTICLES = '/articles',
+    ARTICLE_CREATE = '/articles/create',
+    ARTICLE_EDIT = '/articles/:id/edit',
     ARTICLE_DETAIL = '/articles/:id',
     NOT_FOUND = '*'
 }
@@ -38,7 +41,14 @@ export const routeConfig: RouteConfigElement[] = [
         path: RoutePath.ARTICLE_DETAIL,
         element: <ArticleDetailPage />,
         requireAuth: true,
-
+    },
+    {
+        path: RoutePath.ARTICLE_CREATE,
+        element: <ArticleEditPage />,
+    },
+    {
+        path: RoutePath.ARTICLE_EDIT,
+        element: <ArticleEditPage />,
     },
     {
         path: RoutePath.ABOUT,
