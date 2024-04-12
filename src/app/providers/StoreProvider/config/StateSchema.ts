@@ -3,17 +3,17 @@ import { LoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { NavigateFunction } from 'react-router-dom';
 import { ArticleDetailSchema } from 'entities/Article/model/types/articleDetailSchema';
-import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { ArticleListPageSchema } from 'pages/ArticleListPage';
-import {ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema} from 'pages/ArticleDetailPage';
+import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailPage';
 import { PageSchema } from 'widgets/Page';
 import { ArticleFilterSchema } from 'entities/Article/model/types/articleFilterSchema';
+import { rtkApi } from 'shared/api/rtkApi';
+import {ProfileSchema} from "features/ProfileEditableCard";
 
 export interface StateSchema {
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
     user: UserSchema
 
     // Async reducers
@@ -23,7 +23,6 @@ export interface StateSchema {
     articleDetail?: ArticleDetailSchema
     articleDetailsComments?: ArticleDetailsCommentsSchema
     articleDetailsRecommendations?: ArticleDetailsRecommendationsSchema
-    addCommentForm?: AddCommentFormSchema
     articleList?: ArticleListPageSchema
     articleFilter?: ArticleFilterSchema
     page: PageSchema

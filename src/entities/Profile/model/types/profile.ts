@@ -1,5 +1,5 @@
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import {Currency} from 'entities/Currency';
+import {Country} from 'entities/Country';
 
 export interface Profile {
     id?: string
@@ -13,10 +13,3 @@ export interface Profile {
     avatar?: string
 }
 
-export interface ProfileSchema {
-    data?: Profile
-    isLoading: boolean
-    error?: string
-    readonly: boolean
-    form?: Profile
-}

@@ -22,7 +22,7 @@ const Sidebar = (({ className }: SidebarProps) => {
     };
 
     return (
-        <menu
+        <aside
             data-testid="sidebar"
             className={classNames(className, { [cls.collapsed]: collapsed }, [cls.Sidebar])}
         >
@@ -52,7 +52,7 @@ const Sidebar = (({ className }: SidebarProps) => {
             >
                 {collapsed ? '>' : '<'}
             </Button>
-        </menu>
+        </aside>
     );
 });
 export { Sidebar };

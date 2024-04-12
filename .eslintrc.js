@@ -19,6 +19,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'vol1and-path-plugin',
     ],
     globals: {
         __IS_DEV__: true,
@@ -71,5 +72,6 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'warn',
         'consistent-return': 'off',
+        'vol1and-path-plugin/path-checker': 'error',
     },
 };
