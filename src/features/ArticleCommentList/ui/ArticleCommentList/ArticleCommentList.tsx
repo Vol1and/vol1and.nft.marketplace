@@ -30,6 +30,7 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
 
     const commentSaveHandler = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
+
     }, [dispatch]);
 
     return (
@@ -37,7 +38,6 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
             <Text className={cls.commentTitle} title={t('Комментарии')} />
             <CommentAddForm onSendComment={commentSaveHandler} />
             <CommentList comments={comments} isLoading={commentsIsLoading} />
-
         </div>
     );
 });

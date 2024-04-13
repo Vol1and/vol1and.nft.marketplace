@@ -20,7 +20,7 @@ const AppRouter = () => {
     return (
         <Suspense fallback={<PageLoader />}>
             <Routes>
-                {...routeConfig.map(renderWithWrapper)}
+                {routeConfig.map(renderWithWrapper)}
             </Routes>
         </Suspense>
     );

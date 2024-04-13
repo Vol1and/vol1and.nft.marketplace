@@ -4,6 +4,6 @@ export {
     ArticleListPageAsync as ArticleListPage,
 };
 
-export { ArticleListPageSchema } from './model/types/articleListPageSchema';
+export type { ArticleListPageSchema } from './model/types/articleListPageSchema';
 export { articleListPageReducer, articleListPageActions } from './model/slices/articleListPageSlice';
 export { getArticleListPageView } from './model/selectors/articleListPageSelectors';

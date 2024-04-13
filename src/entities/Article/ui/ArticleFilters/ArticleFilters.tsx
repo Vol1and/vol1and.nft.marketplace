@@ -7,7 +7,6 @@ import TiledIcon from 'shared/assets/icons/tiled-24-24.svg';
 import ListIcon from 'shared/assets/icons/list-24-24.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { Select, SelectOption } from 'shared/ui/Select/Select';
-import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
 import { OrderSelector } from 'features/OrderSelector';
 import {
     getArticleFilterOrder,
@@ -22,6 +21,7 @@ import { fetchArticleList } from 'pages/ArticleListPage/model/services/fetchArti
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 import cls from './ArticleFilters.module.scss';
+import {ArticleSortField, ArticleType} from "entities/Article/model/consts/article";
 
 interface ArticleFiltersProps {
     className?: string

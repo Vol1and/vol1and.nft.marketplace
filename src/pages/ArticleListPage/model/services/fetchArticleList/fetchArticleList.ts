@@ -8,8 +8,8 @@ import {
     getArticleFilterSortField,
 } from 'entities/Article/model/selectors/articleFilterSelectors';
 import { addQueryParams } from 'shared/lib/url/addQueryParams';
-import { ArticleType } from 'entities/Article/model/types/article';
 import { getArticleListPageLimit, getArticleListPageNum } from '../../selectors/articleListPageSelectors';
+import {ArticleType} from "entities/Article/model/consts/article";
 
 interface FetchArticleListProps {
     replace?: boolean

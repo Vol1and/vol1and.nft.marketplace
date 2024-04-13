@@ -10,9 +10,10 @@ import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './ArticleListItem.module.scss';
 import {
-    Article, ArticleBlockType, ArticleBlockText, ArticleView,
+    Article, ArticleBlockText,
 } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import {ArticleBlockType, ArticleView} from "entities/Article/model/consts/article";
 
 interface ArticleListItemProps {
     className?: string;

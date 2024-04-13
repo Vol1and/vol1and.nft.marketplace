@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk';
-import { Article, ArticleType } from '../../types/article';
+import { Article } from '../../types/article';
 import { fetchArticleById } from './fetchArticleById';
+import {ArticleType} from "entities/Article/model/consts/article";
 
 const mockData: Article = {
     blocks: [],

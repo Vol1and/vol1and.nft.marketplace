@@ -2,9 +2,9 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 import {ThunkConfig} from 'app/providers/StoreProvider';
 import {articleFilterActions} from 'entities/Article';
 import {articleListPageActions} from 'pages/ArticleListPage';
-import {ArticleSortField, ArticleType} from 'entities/Article/model/types/article';
 import {SortOrder} from 'shared/types';
 import {fetchArticleList} from '../fetchArticleList/fetchArticleList';
+import {ArticleSortField, ArticleType} from "entities/Article/model/consts/article";
 
 interface FetchArticleListProps {
     replace?: boolean
