@@ -8,8 +8,12 @@ import { pageReducer } from 'widgets/Page';
 import { rtkApi } from 'shared/api/rtkApi';
 import { StateSchema } from './StateSchema';
 
-export const createReduxStore = (initialState?: StateSchema) => {
+export const createReduxStore = (
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
+) => {
     const rootReducers: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
         user: userReducer,
         page: pageReducer,
         [rtkApi.reducerPath]: rtkApi.reducer,

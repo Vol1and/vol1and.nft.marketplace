@@ -12,6 +12,7 @@ const mockData: Article = {
         id: '',
         username: '',
         avatar: '',
+        roles: [],
     },
     id: '',
     img: '',

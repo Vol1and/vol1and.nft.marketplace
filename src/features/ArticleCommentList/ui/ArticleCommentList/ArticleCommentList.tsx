@@ -28,7 +28,7 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
         dispatch(fetchCommentsByArticleId(id));
     }, [dispatch, id]);
 
-    const commentSaveHandler = useCallback((text) => {
+    const commentSaveHandler = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 

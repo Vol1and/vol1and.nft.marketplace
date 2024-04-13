@@ -34,6 +34,15 @@ export default {
     globals: {
         __IS__DEV__: true,
     },
+    reporters: [
+        'default',
+        ['jest-html-reporters', {
+            publicPath: '<rootDir>/reports/unit',
+            filename: 'report.html',
+            openReport: false,
+            inlineSource: true
+        }]
+    ],
 
     // Indicates which provider should be used to instrument code for coverage
     // coverageProvider: "babel",

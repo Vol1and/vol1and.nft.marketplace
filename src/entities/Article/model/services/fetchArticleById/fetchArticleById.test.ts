@@ -1,9 +1,5 @@
-import { Profile } from 'entities/Profile';
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { Article } from 'entities/Article';
-import { ArticleType } from 'entities/Article/model/types/article';
+import { Article, ArticleType } from '../../types/article';
 import { fetchArticleById } from './fetchArticleById';
 
 const mockData: Article = {
@@ -15,6 +11,7 @@ const mockData: Article = {
         avatar: '',
         username: '',
         id: '',
+        roles: [],
     },
     id: '',
     img: '',
