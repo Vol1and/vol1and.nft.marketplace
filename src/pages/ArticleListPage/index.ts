@@ -1,4 +1,6 @@
-import { ArticleListPageAsync } from 'pages/ArticleListPage/ui/ArticleListPage/ArticleListPage.async';
+import { ArticleListPageAsync } from './ui/ArticleListPage/ArticleListPage.async';
+
+export { fetchArticleList } from './model/services/fetchArticleList/fetchArticleList';
 
 export {
     ArticleListPageAsync as ArticleListPage,

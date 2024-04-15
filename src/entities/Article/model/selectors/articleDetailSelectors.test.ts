@@ -1,7 +1,7 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, getArticleDetailError } from 'entities/Article';
-import { getArticleDetailIsLoading, getArticleDetailData } from './articleDetailSelectors';
-import {ArticleType} from "entities/Article/model/consts/article";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getArticleDetailIsLoading, getArticleDetailData, getArticleDetailError } from './articleDetailSelectors';
+import { ArticleType } from '../consts/article';
+import { Article } from '../types/article';
 
 const mockData: Article = {
     blocks: [],

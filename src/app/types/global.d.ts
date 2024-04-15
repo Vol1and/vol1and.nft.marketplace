@@ -6,7 +6,7 @@ declare module '*.scss' {
     export = classNames;
 }
 
-declare module '*.svg' {
+declare module '*.svg?react' {
     import React from 'react';
 
     const SVG: React.FunctionComponent<React.SVGAttributes<SVGElement>>;

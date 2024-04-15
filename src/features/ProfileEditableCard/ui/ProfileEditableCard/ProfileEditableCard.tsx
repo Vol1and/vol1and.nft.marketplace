@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback, useEffect } from 'react';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ProfileCard } from 'entities/Profile';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ProfileCard } from '@/entities/Profile';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader';
 import { ProfileEditableCardHeader } from '../ProfileEditableCardHeader/ProfileEditableCardHeader';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import {

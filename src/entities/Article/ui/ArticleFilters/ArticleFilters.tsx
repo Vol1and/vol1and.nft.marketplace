@@ -1,27 +1,32 @@
 import React, { useCallback, useMemo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ViewSelector, ViewSelectorElementType } from 'features/ViewSelector';
-import { articleFilterActions, ArticleView, getArticleFilterType } from 'entities/Article';
-import TiledIcon from 'shared/assets/icons/tiled-24-24.svg';
-import ListIcon from 'shared/assets/icons/list-24-24.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { Select, SelectOption } from 'shared/ui/Select/Select';
-import { OrderSelector } from 'features/OrderSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ViewSelector, ViewSelectorElementType } from '@/features/ViewSelector';
+import {
+    ArticleType,
+    ArticleView,
+    ArticleSortField,
+} from '../../model/consts/article';
+import { articleFilterActions } from '../../model/slices/articleFilterSlice';
+import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg?react';
+import ListIcon from '@/shared/assets/icons/list-24-24.svg?react';
+import { Select, SelectOption } from '@/shared/ui/Select/Select';
+// eslint-disable-next-line vol1and-path-plugin/layer-imports
+import { OrderSelector } from '@/features/OrderSelector';
 import {
     getArticleFilterOrder,
     getArticleFilterSearch,
-    getArticleFilterSortField,
-} from 'entities/Article/model/selectors/articleFilterSelectors';
-import { SortOrder } from 'shared/types';
-import { articleListPageActions, getArticleListPageView } from 'pages/ArticleListPage';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { fetchArticleList } from 'pages/ArticleListPage/model/services/fetchArticleList/fetchArticleList';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
+    getArticleFilterSortField, getArticleFilterType,
+} from '../../model/selectors/articleFilterSelectors';
+import { SortOrder } from '@/shared/types';
+// eslint-disable-next-line vol1and-path-plugin/layer-imports
+import { articleListPageActions, getArticleListPageView, fetchArticleList } from '@/pages/ArticleListPage';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
 import cls from './ArticleFilters.module.scss';
-import {ArticleSortField, ArticleType} from "entities/Article/model/consts/article";
 
 interface ArticleFiltersProps {
     className?: string

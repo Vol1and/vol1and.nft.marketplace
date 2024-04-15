@@ -1,5 +1,4 @@
-import React from "react";
-import {RoutePath} from "shared/config/routeConfig/routeConfig";
+import React from 'react';
 
 export interface SidebarItemType {
     link: string,

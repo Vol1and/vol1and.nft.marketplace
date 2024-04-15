@@ -1,7 +1,7 @@
 import React, {
-    InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState,
+    InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'> {
@@ -41,7 +41,6 @@ const Input = memo((props: InputProps) => {
 
     const onFocus = () => {
         setIsFocused(true);
-        console.log(isFocused);
     };
 
     const onBlur = () => {
@@ -57,6 +56,7 @@ const Input = memo((props: InputProps) => {
             )}
             <div className={cls.caretWrapper}>
                 <input
+                    {...otherProps}
                     ref={ref}
                     className={classNames(cls.input, { [cls.readonly]: readonly })}
                     type={type}

@@ -1,8 +1,8 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ViewSelectorElementType } from 'features/ViewSelector/model/types/viewSelector';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import type { ViewSelectorElementType } from '../../model/types/viewSelector';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import cls from './ViewSelector.module.scss';
 
 interface ViewSelectorProps<T> {

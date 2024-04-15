@@ -1,11 +1,11 @@
 import {
     CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { userReducer } from 'entities/User';
-import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
-import { api } from 'shared/api/api';
-import { pageReducer } from 'widgets/Page';
-import { rtkApi } from 'shared/api/rtkApi';
+import { userReducer } from '@/entities/User';
+import { createReducerManager } from '../config/reducerManager';
+import { api } from '@/shared/api/api';
+import { pageReducer } from '@/widgets/Page';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { StateSchema } from './StateSchema';
 
 export const createReduxStore = (

@@ -1,13 +1,13 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {SortOrder} from 'shared/types';
-import {ArticleFilterSchema} from '../types/articleFilterSchema';
-import {ArticleSortField, ArticleType} from "entities/Article/model/consts/article";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { SortOrder } from '@/shared/types';
+import { ArticleFilterSchema } from '../types/articleFilterSchema';
+import { ArticleSortField, ArticleType } from '../consts/article';
 
 const initialState: ArticleFilterSchema = {
     order: 'desc',
     search: '',
     sort: ArticleSortField.CREATED,
-    type: ArticleType.ALL
+    type: ArticleType.ALL,
 };
 
 export const articleFilterSlice = createSlice({

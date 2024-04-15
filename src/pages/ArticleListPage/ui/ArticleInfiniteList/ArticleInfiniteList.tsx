@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import React, { memo, useEffect } from 'react';
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useSearchParams } from 'react-router-dom';
+import { ArticleList } from '@/entities/Article';
 import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';
 import { getArticles } from '../../model/slices/articleListPageSlice';
 import {

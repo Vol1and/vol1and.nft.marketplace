@@ -1,6 +1,6 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
 export enum TextTheme {
@@ -27,7 +27,7 @@ interface TextProps {
 
 const Text = (props: TextProps) => {
     const {
-        className, text, title, theme = TextTheme.PRIMARY, align = TextAlign.LEFT
+        className, text, title, theme = TextTheme.PRIMARY, align = TextAlign.LEFT,
     } = props;
 
     const { t } = useTranslation();

@@ -1,11 +1,10 @@
 import React, { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
 import { useDispatch } from 'react-redux';
-import { Page } from 'widgets/Page/ui/Page';
-import { ArticleFilters } from 'entities/Article/ui/ArticleFilters/ArticleFilters';
-import { articleFilterReducer } from 'entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader';
+import { Page } from '@/widgets/Page';
+import { articleFilterReducer, ArticleFilters } from '@/entities/Article';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import { fetchNextArticleListPage } from '../../model/services/fetchNextArticleListPage/fetchNextArticleListPage';
 import cls from './ArticleListPage.module.scss';

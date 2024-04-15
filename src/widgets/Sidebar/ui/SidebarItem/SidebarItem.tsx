@@ -1,8 +1,6 @@
-import React, { memo, PropsWithChildren, ReactNode } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { IconItem } from '@storybook/blocks';
+import React, { memo, PropsWithChildren } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import cls from './SidebarItem.module.scss';
 
 export interface SidebarItemProps {

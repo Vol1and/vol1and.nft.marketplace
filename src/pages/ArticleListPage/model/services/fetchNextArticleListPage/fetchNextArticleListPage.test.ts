@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk';
-import { articleListPageActions } from 'pages/ArticleListPage/model/slices/articleListPageSlice';
-import { fetchArticleList } from 'pages/ArticleListPage/model/services/fetchArticleList/fetchArticleList';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk';
+import { articleListPageActions } from '../../slices/articleListPageSlice';
+import { fetchArticleList } from '../fetchArticleList/fetchArticleList';
 import { fetchNextArticleListPage } from './fetchNextArticleListPage';
 
 const mockState = {

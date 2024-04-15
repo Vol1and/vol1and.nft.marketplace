@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ArticleDetail } from 'entities/Article';
 import { useParams } from 'react-router-dom';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
-import { Page } from 'widgets/Page/ui/Page';
-import { ArticleRecommendationList } from 'features/articleRecommendationList';
-import { ArticleCommentList } from 'features/ArticleCommentList';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleDetail } from '@/entities/Article';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader';
+import { Page } from '@/widgets/Page';
+import { ArticleRecommendationList } from '@/features/articleRecommendationList';
+import { ArticleCommentList } from '@/features/ArticleCommentList';
 import { articleDetailsPageRecommendationsReducer } from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import { articleDetailsCommentsReducer } from '../../model/slices/articleDetailsCommentsSlice';
 import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';

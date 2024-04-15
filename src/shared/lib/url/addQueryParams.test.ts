@@ -32,7 +32,8 @@ describe('getQueryParams', () => {
     });
 
     it('should handle special characters in param names', () => {
-        expect(getQueryParams({ 'param!@#': 'value1', 'param$%^&': 'value2' })).toEqual('?param%21%40%23=value1&param%24%25%5E%26=value2');
+        expect(getQueryParams({ 'param!@#': 'value1', 'param$%^&': 'value2' }))
+            .toEqual('?param%21%40%23=value1&param%24%25%5E%26=value2');
     });
 
     it('should handle existing query params in window.location.search', () => {

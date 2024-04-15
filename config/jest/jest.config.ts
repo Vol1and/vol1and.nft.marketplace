@@ -40,8 +40,8 @@ export default {
             publicPath: '<rootDir>/reports/unit',
             filename: 'report.html',
             openReport: false,
-            inlineSource: true
-        }]
+            inlineSource: true,
+        }],
     ],
 
     // Indicates which provider should be used to instrument code for coverage

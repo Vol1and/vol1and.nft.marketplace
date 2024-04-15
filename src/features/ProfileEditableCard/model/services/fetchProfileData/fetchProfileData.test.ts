@@ -1,7 +1,7 @@
-import { Profile } from 'entities/Profile';
-import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { Profile } from '@/entities/Profile';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { fetchProfileData } from './fetchProfileData';
 
 const profileMock: Profile = {

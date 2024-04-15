@@ -1,16 +1,15 @@
-import { UserSchema } from 'entities/User';
-import { LoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { ArticleDetailSchema } from 'entities/Article/model/types/articleDetailSchema';
-import { ArticleListPageSchema } from 'pages/ArticleListPage';
-import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailPage';
-import { PageSchema } from 'widgets/Page';
-import { ArticleFilterSchema } from 'entities/Article/model/types/articleFilterSchema';
-import { rtkApi } from 'shared/api/rtkApi';
-import {ProfileSchema} from "features/ProfileEditableCard";
+import { UserSchema } from '@/entities/User';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { ArticleListPageSchema } from '@/pages/ArticleListPage';
+import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from '@/pages/ArticleDetailPage';
+import { PageSchema } from '@/widgets/Page';
+import { rtkApi } from '@/shared/api/rtkApi';
+import { ProfileSchema } from '@/features/ProfileEditableCard';
+import { ArticleDetailSchema, ArticleFilterSchema } from '@/entities/Article';
 
 export interface StateSchema {
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,

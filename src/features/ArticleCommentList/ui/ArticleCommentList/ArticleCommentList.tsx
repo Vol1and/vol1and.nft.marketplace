@@ -1,16 +1,17 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback, useEffect } from 'react';
-import { Text } from 'shared/ui/Text/Text';
-import { CommentAddForm, CommentList } from 'entities/Comment';
-import { addCommentForArticle } from 'pages/ArticleDetailPage/model/services/addCommentForArticle/addCommentForArticle';
 import { useDispatch, useSelector } from 'react-redux';
-import { getArticleCommentsIsLoading } from 'pages/ArticleDetailPage/model/selectors/comments';
-import { getArticleComments } from 'pages/ArticleDetailPage/model/slices/articleDetailsCommentsSlice';
-import {
-    fetchCommentsByArticleId,
-} from 'pages/ArticleDetailPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import { CommentAddForm, CommentList } from '@/entities/Comment';
 import cls from './ArticleCommentList.module.scss';
+// eslint-disable-next-line vol1and-path-plugin/layer-imports
+import {
+    addCommentForArticle,
+    fetchCommentsByArticleId,
+    getArticleComments,
+    getArticleCommentsIsLoading,
+} from '@/pages/ArticleDetailPage';
 
 interface ArticleCommentListProps {
     id: string
@@ -30,7 +31,6 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
 
     const commentSaveHandler = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
-
     }, [dispatch]);
 
     return (

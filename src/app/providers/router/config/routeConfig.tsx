@@ -1,26 +1,14 @@
 import React, { ReactNode } from 'react';
-import { MainPage } from 'pages/MainPage';
-import { AboutPage } from 'pages/AboutPage';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { ProfilePage } from 'pages/ProfilePage';
-import { ArticleDetailPage } from 'pages/ArticleDetailPage';
-import { ArticleListPage } from 'pages/ArticleListPage';
-import { ArticleEditPage } from 'pages/ArticleEditPage';
-import { AdminPanelPage } from 'pages/AdminPanelPage';
-import { UserRole } from 'entities/User/model/types/user';
-
-export enum RoutePath {
-    MAIN = '/',
-    ABOUT = '/about',
-    PROFILE = '/profile',
-    PROFILE_DETAIL = '/profile/:id',
-    ARTICLES = '/articles',
-    ARTICLE_CREATE = '/articles/create',
-    ARTICLE_EDIT = '/articles/:id/edit',
-    ARTICLE_DETAIL = '/articles/:id',
-    ADMIN_PANEL = '/admin-panel',
-    NOT_FOUND = '*'
-}
+import { MainPage } from '@/pages/MainPage';
+import { AboutPage } from '@/pages/AboutPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProfilePage } from '@/pages/ProfilePage';
+import { ArticleDetailPage } from '@/pages/ArticleDetailPage';
+import { ArticleListPage } from '@/pages/ArticleListPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { UserRole } from '@/entities/User';
+import { RoutePath } from '@/shared/types';
 
 export interface RouteConfigElement {
     path: RoutePath,

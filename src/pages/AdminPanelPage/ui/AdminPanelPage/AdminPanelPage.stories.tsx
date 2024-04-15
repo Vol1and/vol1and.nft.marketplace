@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof AdminPanelPage> = (args) => <AdminPanelPag
 
 export const Normal = Template.bind({});
 Normal.args = {
-   
+
 };

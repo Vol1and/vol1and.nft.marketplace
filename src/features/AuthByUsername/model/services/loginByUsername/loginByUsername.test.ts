@@ -1,6 +1,6 @@
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
-import { userActions } from 'entities/User';
-import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk';
+import { loginByUsername } from './loginByUsername';
+import { userActions } from '@/entities/User';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk';
 
 const userMock = {
     username: '123', id: '1', avatar: 'Eblan', roles: [],

@@ -1,13 +1,12 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { Input } from 'shared/ui/Input/Input';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Currency, CurrencySelect } from 'entities/Currency';
-import { Country } from 'entities/Country/model/const/country';
-import { CountrySelect } from 'entities/Country';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
+import { Input } from '@/shared/ui/Input/Input';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Currency, CurrencySelect } from '@/entities/Currency';
+import { Country, CountrySelect } from '@/entities/Country';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
@@ -65,7 +64,7 @@ const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeFirstname}
                     readonly={readonly}
-                    data-testid={'ProfileCard.firstname'}
+                    data-testid="ProfileCard.firstname"
                 />
                 <Input
                     value={data?.lastname}
@@ -73,7 +72,7 @@ const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeLastname}
                     readonly={readonly}
-                    data-testid={'ProfileCard.lastname'}
+                    data-testid="ProfileCard.lastname"
                 />
                 <Input
                     value={data?.username}

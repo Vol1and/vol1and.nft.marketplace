@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
-import {ArticleType} from "entities/Article/model/consts/article";
+import { ArticleType } from '../consts/article';
 
 export const getArticleFilterOrder = (state: StateSchema) => state.articleFilter?.order || 'desc';
 export const getArticleFilterSearch = (state: StateSchema) => state.articleFilter?.search;

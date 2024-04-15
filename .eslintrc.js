@@ -63,8 +63,8 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'no-restricted-globals': 'off',
         'i18next/no-literal-string':
-            ['warn', { markupOnly: true }],
-        'max-len': ['error', { code: 120, ignoreComments: true }],
+            'off',
+        'max-len': ['warn', { code: 120, ignoreComments: true }],
         'jsx-a11y/click-events-have-key-events': ['off'],
         'jsx-a11y/no-static-element-interactions': 'off',
         'react-hooks/rules-of-hooks': 'error',
@@ -72,6 +72,8 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'warn',
         'consistent-return': 'off',
-        'vol1and-path-plugin/path-checker': 'error',
+        'vol1and-path-plugin/path-checker': ['error', { alias: '@' }],
+        'vol1and-path-plugin/public-api-imports': ['error', { alias: '@' }],
+        'vol1and-path-plugin/layer-imports': ['error', { alias: '@', ignoreImportPatterns: ['**/StoreProvider'] }],
     },
 };
