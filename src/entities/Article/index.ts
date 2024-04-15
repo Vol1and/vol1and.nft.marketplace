@@ -16,5 +16,5 @@ export {
 export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';
 export { ArticleView } from './model/consts/article';
 export { ArticleSortField, ArticleType } from './model/consts/article';
-export { ArticleFilterSchema } from './model/types/articleFilterSchema';
-export { ArticleDetailSchema } from './model/types/articleDetailSchema';
+export type { ArticleFilterSchema } from './model/types/articleFilterSchema';
+export type { ArticleDetailSchema } from './model/types/articleDetailSchema';

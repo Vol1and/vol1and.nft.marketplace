@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import React, { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { ArticleList, ArticleView } from '@/entities/Article';
 import cls from './ArticleRecommendationList.module.scss';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';

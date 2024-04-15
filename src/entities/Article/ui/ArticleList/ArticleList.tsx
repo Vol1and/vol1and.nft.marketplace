@@ -6,7 +6,7 @@ import { ArticleView } from '../../model/consts/article';
 
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {

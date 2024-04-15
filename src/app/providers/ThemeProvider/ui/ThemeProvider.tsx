@@ -1,5 +1,7 @@
 import React, { PropsWithChildren, useMemo, useState } from 'react';
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/ThemeContext';
+import {Theme} from "@/shared/const/theme";
+import {LOCAL_STORAGE_THEME_KEY} from "@/shared/const/localstorage";
+import { ThemeContext } from '@/shared/context/theme';
 
 interface ThemeProviderProps {
     initialTheme?: Theme

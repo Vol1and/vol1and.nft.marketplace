@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg?react';
 import { NotificationList } from '@/entities/Notification';
 import { Popover } from '@/shared/ui/Popups';

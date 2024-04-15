@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Select, SelectOption } from '@/shared/ui/Select/Select';
+import { Select, SelectOption } from '@/shared/ui/Select';
 import { Country } from '../../model/const/country';
 
 interface CountrySelectProps {

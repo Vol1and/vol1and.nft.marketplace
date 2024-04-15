@@ -11,7 +11,7 @@ import {
 import { articleFilterActions } from '../../model/slices/articleFilterSlice';
 import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg?react';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg?react';
-import { Select, SelectOption } from '@/shared/ui/Select/Select';
+import { Select, SelectOption } from '@/shared/ui/Select';
 // eslint-disable-next-line vol1and-path-plugin/layer-imports
 import { OrderSelector } from '@/features/OrderSelector';
 import {
@@ -22,10 +22,10 @@ import {
 import { SortOrder } from '@/shared/types';
 // eslint-disable-next-line vol1and-path-plugin/layer-imports
 import { articleListPageActions, getArticleListPageView, fetchArticleList } from '@/pages/ArticleListPage';
-import { Card } from '@/shared/ui/Card/Card';
-import { Input } from '@/shared/ui/Input/Input';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import cls from './ArticleFilters.module.scss';
 
 interface ArticleFiltersProps {

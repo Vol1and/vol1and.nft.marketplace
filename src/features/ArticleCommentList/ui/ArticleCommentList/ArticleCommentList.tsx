@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { CommentAddForm, CommentList } from '@/entities/Comment';
 import cls from './ArticleCommentList.module.scss';
 // eslint-disable-next-line vol1and-path-plugin/layer-imports

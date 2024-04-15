@@ -1,6 +1,6 @@
 import React, { memo, PropsWithChildren } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { AppLink } from '@/shared/ui/AppLink';
 import cls from './SidebarItem.module.scss';
 
 export interface SidebarItemProps {

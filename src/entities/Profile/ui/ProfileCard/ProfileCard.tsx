@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Loader } from '@/shared/ui/Loader/Loader';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
-import { Input } from '@/shared/ui/Input/Input';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Loader } from '@/shared/ui/Loader';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Input } from '@/shared/ui/Input';
+import { Avatar } from '@/shared/ui/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Profile } from '../../model/types/profile';

@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import DarkIcon from '@/shared/assets/icons/theme-dark.svg?react';
 import LightIcon from '@/shared/assets/icons/theme-light.svg?react';
 import cls from './ThemeSwitcher.module.scss';
